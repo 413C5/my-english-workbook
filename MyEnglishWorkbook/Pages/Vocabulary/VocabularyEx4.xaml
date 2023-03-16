@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Vocabulary.VocabularyEx4"
+             Title="Exercise 4">
+    <!--Ejercicio 3 de vocabulario. Se tiene un enunciado y se tiene que poner la palabra correcta
+        Autor:Matías Julián Pérez May-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Diccionario de recursos-->
+            <Style TargetType="Button" x:Key="BotonCheck">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#e03754"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Resultado">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <!--Instrucción-->
+            <Label Text="4- Match the word with the correct definition." FontFamily="Rockwell Bold" TextColor="Black"/>
+            <CollectionView x:Name="clvQuestions">
+                <CollectionView.ItemTemplate>
+                    <!--Se genera una coleccion-->
+                    <DataTemplate>
+                        <!--Listado de preguntas-->
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="1"
+                       Text="{Binding Enunciado}"
+                       FontFamily="Rockwell Bold"
+                       WidthRequest="150"/>
+                            <!--Se cuenta con un picker para elegir una opcion-->
+                            <Picker
+                                Title="Select an answer"
+                                TitleColor="Red"
+                                FontFamily="Rockwell"
+                                Grid.Column="2"
+                                SelectedItem="{Binding ResSel}">
+                                <Picker.Items >
+                                    <x:String>Spotted</x:String>
+                                    <x:String>Flowered</x:String>
+                                    <x:String>Striped</x:String>
+                                    <x:String>Chequered</x:String>
+                                    <x:String>Helmet</x:String>
+                                </Picker.Items>
+                            </Picker>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--Score-->
+            <Frame BackgroundColor="Transparent">
+                <Label Text="" x:Name="lblResultado" Style="{StaticResource Resultado}"/>
+            </Frame>
+            <!--Al darle click da el puntaje-->
+            <Button x:Name="Checker" Clicked="Checker_Clicked" Text="Check" Style="{StaticResource BotonCheck}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

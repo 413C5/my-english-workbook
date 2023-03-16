@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Verbs.ExerciseVerbs2"
+             Title="Exercise 2">
+    <!--Ejercicio 2 de verbos.Se tiene que descrifrar las palabras desordenadas y 
+        poner su significado
+        Autor:Alejandro González Zárate-->
+        <ContentPage.Resources>
+        <!--Diccionario de recursos-->
+        <ResourceDictionary>
+                <Style TargetType="Button" x:Key="BotonCheck">
+                    <Setter Property="FontSize" Value="25"/>
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="BackgroundColor" Value="#e03754"/>
+                    <Setter Property="HorizontalOptions" Value="Center"/>
+                    <Setter Property="BorderColor" Value="Black"/>
+                    <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                    <Setter Property="BorderWidth" Value="2"/>
+                    <Setter Property="TextTransform" Value="None"/>
+                </Style>
+                <Style TargetType="Label" x:Key="Resultado">
+                    <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                    <Setter Property="FontSize" Value="30"/>
+                    <Setter Property="TextColor" Value="Black"/>
+                    <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                </Style>
+            </ResourceDictionary>
+            
+        </ContentPage.Resources>
+        <ContentPage.Content>
+            <StackLayout Margin="15">
+            <!--Instrucción-->
+            <Label Text="2.-Unscramble the verbs and write the meanings." FontFamily="Rockwell Bold" TextColor="Black"/>
+                <ListView x:Name="lsvQuestionsV" HasUnevenRows="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                    <!--Se genera una lista-->
+                    <DataTemplate>
+                        <!--Listado de verbos a descifrar-->
+                            <ViewCell>
+                            <!--Permite usar DataTemplates personalizados-->
+                            <Grid>
+                                <!--Permite tener un acomodo de label y entries-->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding Enunciado}" FontFamily="Rockwell"/>
+                                <Entry Grid.Column="1" Grid.Row="0" Text="{Binding ResSel, Mode=TwoWay}" FontFamily="Rockwell"/>
+                                <Entry Grid.Column="2" Grid.Row="0" Text="{Binding ResSel2, Mode=TwoWay}" FontFamily="Rockwell"/>
+                            </Grid>
+                        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            <!--Score-->
+            <Frame BackgroundColor="Transparent">
+                <Label Text="" x:Name="lblResultado" Style="{StaticResource Resultado}"/>
+            </Frame>
+            <!--Al darle click da el puntaje-->
+            <Button x:Name="Checker" Clicked="Checker_Clicked" Text="Check" Style="{StaticResource BotonCheck}"/>
+            </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

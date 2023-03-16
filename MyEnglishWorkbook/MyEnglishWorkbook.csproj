@@ -1,0 +1,97 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Rockwell Bold Italic.TTF" />
+    <None Remove="Fonts\Rockwell Bold.TTF" />
+    <None Remove="Fonts\Rockwell Condensed Bold.TTF" />
+    <None Remove="Fonts\Rockwell Condensed.TTF" />
+    <None Remove="Fonts\Rockwell Extra Bold.TTF" />
+    <None Remove="Fonts\Rockwell Italic.TTF" />
+    <None Remove="Fonts\Rockwell.TTF" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\Rockwell Bold.TTF" />
+    <EmbeddedResource Include="Fonts\Rockwell Bold Italic.TTF" />
+    <EmbeddedResource Include="Fonts\Rockwell Condensed Bold.TTF" />
+    <EmbeddedResource Include="Fonts\Rockwell Condensed.TTF" />
+    <EmbeddedResource Include="Fonts\Rockwell Extra Bold.TTF" />
+    <EmbeddedResource Include="Fonts\Rockwell Italic.TTF" />
+    <EmbeddedResource Include="Fonts\Rockwell.TTF" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainShell.xaml.cs">
+      <DependentUpon>MainShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Verbs\RegularVerbs.xaml.cs">
+      <DependentUpon>RegularVerbs.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Pages\Reading\Reading1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Reading\Reading2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Reading\ReadingEx1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Reading\ReadingEx2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\StartPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Verbs\ExerciseVerbs1.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Verbs\ExerciseVerbs2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Verbs\ExerciseVerbs3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Verbs\ExerciseVerbs4.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Verbs\IrregularVerbs.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Verbs\RegularVerbs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Vocabulary\Vocabulary1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Vocabulary\VocabularyEx1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Vocabulary\VocabularyEx2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Vocabulary\VocabularyEx3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Vocabulary\VocabularyEx4.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

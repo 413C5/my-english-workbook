@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Vocabulary.Vocabulary1"
+             Title="Vocabulary">
+
+    <!--Autor: Matías Julián Pérez May-->
+    <!--Recursos de estilo de la página-->
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Frame" x:Key="FrameSuperior">
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Padding" Value="5,10,5,10"/>
+                <Setter Property="VerticalOptions" Value="StartAndExpand" />
+                <Setter Property="Background" Value="Gray"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <!--Elementos de la página-->
+    <StackLayout BackgroundColor="White">
+        <!--Sección 1 de la lección Daily Life 1-->
+        <!--Frame interactuable para mostrar el listview 1-->
+        <Frame Style="{StaticResource FrameSuperior}">
+            <Label Text="Daily Life 1" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" FontFamily="Rockwell"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <StackLayout>
+            <!--ListView con diccionario de vocabulario 1-->
+            <ListView x:Name="lsvDic1" HasUnevenRows="True" ItemSelected="lsvDic_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  Margin="8" CornerRadius="10" Padding="10" BackgroundColor="Transparent">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Imagen}" WidthRequest="60" HeightRequest="60"/>
+                                    <StackLayout Padding="15,0,0,0">
+                                        <Label Text="{Binding Nombre}" FontSize="Medium" FontFamily="Rockwell Bold"/>
+                                        <Label Text="{Binding Definicion}" FontSize="Small" FontFamily="Rockwell"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <!--Sección 2 de la lección Daily Life 2-->
+        <!--Frame interactuable para mostrar el listview 2-->
+        <Frame Style="{StaticResource FrameSuperior}">
+            <Label Text="Daily Life 2" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" FontFamily="Rockwell"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped2"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <StackLayout>
+            <!--ListView con diccionario de vocabulario 2-->
+            <ListView x:Name="lsvDic2" HasUnevenRows="True" ItemSelected="lsvDic_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  Margin="8" CornerRadius="10" Padding="10" BackgroundColor="Transparent">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Imagen}" WidthRequest="60" HeightRequest="60"/>
+                                    <StackLayout Padding="15,0,0,0">
+                                        <Label Text="{Binding Nombre}" FontSize="Medium" FontFamily="Rockwell Bold"/>
+                                        <Label Text="{Binding Definicion}" FontSize="Small" FontFamily="Rockwell"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <!--Sección 3 de la lección Daily Life 3-->
+        <!--Frame interactuable para mostrar el listview 3-->
+        <Frame Style="{StaticResource FrameSuperior}">
+            <Label Text="Daily Life 3" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" FontFamily="Rockwell"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped3"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <StackLayout>
+            <!--ListView con diccionario de vocabulario 3-->
+            <ListView x:Name="lsvDic3" HasUnevenRows="True" ItemSelected="lsvDic_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  Margin="8" CornerRadius="10" Padding="10" BackgroundColor="Transparent">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Imagen}" WidthRequest="60" HeightRequest="60"/>
+                                    <StackLayout Padding="15,0,0,0">
+                                        <Label Text="{Binding Nombre}" FontSize="Medium" FontFamily="Rockwell Bold"/>
+                                        <Label Text="{Binding Definicion}" FontSize="Small" FontFamily="Rockwell"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <!--Sección 4 de la lección Entertainment media-->
+        <!--Frame interactuable para mostrar el listview 4-->
+        <Frame Style="{StaticResource FrameSuperior}">
+            <!--ListView con diccionario de vocabulario 4-->
+            <Label Text="Entertainment and Media" HorizontalTextAlignment="Center" TextColor="White" FontSize="Large" FontFamily="Rockwell"/>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped4"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+        <StackLayout>
+            <ListView x:Name="lsvDic4" HasUnevenRows="True" ItemSelected="lsvDic_ItemSelected" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame  Margin="8" CornerRadius="10" Padding="10" BackgroundColor="Transparent">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding Imagen}" WidthRequest="60" HeightRequest="60"/>
+                                    <StackLayout Padding="15,0,0,0">
+                                        <Label Text="{Binding Nombre}" FontSize="Medium" FontFamily="Rockwell Bold"/>
+                                        <Label Text="{Binding Definicion}" FontSize="Small" FontFamily="Rockwell"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <!--Label donde se muestra el texto de ejemplo para cada palabra-->
+        <Frame x:Name="frmEjemplo" BackgroundColor="Red" Padding="5,10,5,10" VerticalOptions="EndAndExpand" CornerRadius="10">
+            <Label x:Name="lblEjemplo" Text="Press any word on list to get an example." TextColor="White" FontFamily="Rockwell"/>
+        </Frame>
+    </StackLayout>
+</ContentPage>

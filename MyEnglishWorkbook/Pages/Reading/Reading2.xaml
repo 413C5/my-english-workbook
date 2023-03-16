@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Reading.Reading2"
+             Title="Reading 2">
+    <!--Lectura 2
+        Autor: Marco Antonio García Hernández-->
+    <ScrollView>
+        <StackLayout>
+            <!--Se crea un grid para acomodar la imagen y titulo-->
+            <Label Text="THE UN EMBLEM" FontSize="38"
+                       HorizontalOptions="Center"  HorizontalTextAlignment="Center" TextColor="Black"  FontAttributes="Bold" VerticalOptions="Center"  Grid.Column="1"/>
+            <Image Aspect="AspectFit" Source="Un2"  HorizontalOptions="Center"   HeightRequest="240" Grid.Column="0"/>
+            <!--Se escribe el texto por parrafo-->
+            <Label Text="The current United Nations emblem was approved on 7 December 1946. The design is a map of the world representing an azimuthal equidistant projection centred on the North Pole, inscribed in a wreath consisting of crossed conventionalized branches of the olive tree, in gold on a field of smoke-blue with all water areas in white. The projection of the map extends to 60 degrees south latitude, and includes five concentric circles." 
+                   TextColor="Black" HorizontalOptions="Fill" HorizontalTextAlignment="Center" VerticalOptions="Fill" FontSize="20" Padding="10,0,10,10"/>
+            <!--Titulo-->
+            <Label Text="Symbolism" FontSize="38"
+                       HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="Black"  FontAttributes="Bold" VerticalOptions="Start"/>
+            <!--Se escribe el texto por parrafo-->
+            <Label Text="Olive branches symbolize peace. The world map depicts the area of concern to the United Nations in achieving its main purpose, peace and security." 
+                   TextColor="Black" HorizontalOptions="Fill"  HorizontalTextAlignment="Center" VerticalOptions="Fill" FontSize="20" Padding="10,0,10,10"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

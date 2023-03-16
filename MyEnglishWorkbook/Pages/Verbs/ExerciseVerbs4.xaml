@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Verbs.ExerciseVerbs4"
+             Title="Exercise 4">
+    <!--Ejercicio 4 de verbos.Se tiene que unir las columnas con la 
+        imagen correcta
+        Autor:Alejandro González Zárate-->
+    <ContentPage.Resources>
+        <!--Diccionario de recursos-->
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="BotonCheck">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#e03754"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Resultado">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <!--Instrucción-->
+            <Label Text="4.-Match the verb to the drawing" FontFamily="Rockwell Bold" TextColor="Black"/>
+            <ListView x:Name="lsvQuestionsV" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <!--Se genera una lista-->
+                    <DataTemplate>
+                        <!--Listado de verbos a unir-->
+                        <ViewCell>
+                            <!--Permite usar DataTemplates personalizados-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" Text="{Binding Enunciado}" FontFamily="Rockwell"/>
+                                <!--El teclado es solo numerico-->
+                                <Entry Grid.Column="1" Grid.Row="0" Text="{Binding ResSel, Mode=TwoWay}" Keyboard="Numeric" FontFamily="Rockwell"/>
+                                <Image Grid.Column="2" Grid.Row="0" Source="{Binding Foto}" WidthRequest="84" HeightRequest="84" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--Score-->
+            <Frame BackgroundColor="Transparent">
+                <Label Text="" x:Name="lblResultado" Style="{StaticResource Resultado}"/>
+            </Frame>
+            <!--Al darle click da el puntaje-->
+            <Button x:Name="Checker" Clicked="Checker_Clicked" Text="Check" Style="{StaticResource BotonCheck}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

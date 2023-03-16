@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Reading.ReadingEx1"
+             Title="Reading Exercise 1">
+    <!--Ejercicio 1 de reading.Verdadero y falso
+        Autor:Marco Antonio García Hernández-->
+    <ContentPage.Resources>
+        <!--Diccionario de recursos-->
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="BotonCheck">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#e03754"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Resultado">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Intruccion de la actividad-->
+            <Label Text="1- Select True or False." FontFamily="Rockwell Bold" TextColor="Black"/>
+            <!--Se crea un collection view para mostrar los enunciados-->
+            <CollectionView x:Name="clvQuestions">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Picker
+                                Title="T or F "
+                                TitleColor="Red"
+                                Grid.Column="0"
+                                SelectedItem="{Binding ResSel}"
+                                FontFamily="Rockwell">
+                                <!--picker con true o false-->
+                                <Picker.Items >
+                                    <x:String>True</x:String>
+                                    <x:String>False</x:String>
+                                </Picker.Items>
+                            </Picker>
+                            <Label Grid.Column="1"
+                               Text="{Binding Enunciado}"
+                               FontFamily="Rockwell Bold"
+                               HorizontalOptions="Fill" VerticalOptions="Fill"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!--Se muestran los resultado en el label text-->
+            <Frame BackgroundColor="Transparent">
+                <Label Text="" x:Name="lblResultado" Style="{StaticResource Resultado}"/>
+            </Frame>
+            <!--Boton para enviar respuestas-->
+            <Button x:Name="Checker" Clicked="Checker_Clicked" Text="Check" Style="{StaticResource BotonCheck}" Margin="15"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

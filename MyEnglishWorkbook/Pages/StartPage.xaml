@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.StartPage"
+              Title="Start Page">
+    <!--Pagina de inicio
+        Autor: Marco Antonio García Hernández -->
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Titulo -->
+            <Label Text="Welcome to My English Workbook" FontSize="24"
+                   HorizontalOptions="Center"  TextColor="Black"  FontAttributes="Bold" 
+                   FontFamily="Rockwell Bold.ttf"/>
+            <!--Texto Introductorio -->
+            <Label Text="Learn English and improve your skills through our courses and resources. Everything you find here has been specially created to help you on your learning path!" 
+                   TextColor="Black" HorizontalOptions="Fill" FontSize="25" Padding="10,0,10,30" HorizontalTextAlignment="Center"
+                   FontFamily="Rockwell.ttf"/>
+            <Image Aspect="AspectFit" Source="EnglishFun"  HorizontalOptions="Center"  VerticalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Reading.ReadingEx2"
+             Title="Reading Exercise 2">
+    <!--Ejercicio 2 de reading.Unir enunciados
+        Autor:Marco Antonio García Hernández-->
+    <ContentPage.Resources>
+        <!--Diccionario de recursos-->
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="BotonCheck">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#e03754"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Resultado">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <!--Intruccion de la actividad-->
+            <Label Text="2- Match the columns." FontFamily="Rockwell Bold" TextColor="Black"/>
+            <ListView x:Name="clvQuestions" HasUnevenRows="False" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <!--Se genera una lista-->
+                    <DataTemplate>
+                        <!--Listado de verbos a unir-->
+                        <ViewCell>
+                            <!--Permite usar DataTemplates personalizados-->
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <!--El teclado es solo numerico-->
+                                <Entry Grid.Column="0" Grid.Row="0" Text="{Binding ResSel, Mode=TwoWay}" Keyboard="Numeric" FontFamily="Rockwell"/>
+                                <Label Grid.Column="1" Grid.Row="0" Text="{Binding Enunciado}" FontFamily="Rockwell"/>
+                                <Label Grid.Column="2" Grid.Row="0" Text="{Binding Enunciado2}" FontFamily="Rockwell"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--Se muestran los resultado en el label text-->
+            <Frame BackgroundColor="Transparent">
+                <Label Text="" x:Name="lblResultado" Style="{StaticResource Resultado}"/>
+            </Frame>
+            <!--Boton para enviar respuestas-->
+            <Button x:Name="Checker" Clicked="Checker_Clicked" Text="Check" Style="{StaticResource BotonCheck}" Margin="15"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

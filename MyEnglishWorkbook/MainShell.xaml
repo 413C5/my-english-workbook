@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:MyEnglishWorkbook.Pages"
+             xmlns:pagesRea="clr-namespace:MyEnglishWorkbook.Pages.Reading"
+             xmlns:pagesVer="clr-namespace:MyEnglishWorkbook.Pages.Verbs"
+             xmlns:pagesVoc="clr-namespace:MyEnglishWorkbook.Pages.Vocabulary"
+             x:Class="MyEnglishWorkbook.MainShell">
+    <!--Autor: Marco Antonio García Hernández-->
+    <!--Shell que contiene tanto el FlyOutBar asi como el TabBar, para de esa forma poder
+        acceder a las páginas de la aplicación-->
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!--estilos -->
+            <Style x:Key="EstiloBase" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#9d1517" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+                <Setter Property="Shell.TitleColor" Value="White" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#9d1517"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                <Setter Property="Shell.FlyoutWidth" Value="200"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource EstiloBase}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource EstiloBase}" />
+        </ResourceDictionary>
+    </Shell.Resources>
+    <!--Color de header -->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="#9d1517" HeightRequest="200">
+                <Image Aspect="Fill"
+                       Source="Logo"
+                       Opacity="0.5" />
+                <Label Text="MyEnglishWorkbook" TextColor="White"
+                       FontSize="20"
+                       FontFamily="Rockwell"
+                       HorizontalOptions="Center" VerticalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    <!--flyout y shell-->
+    <!--Pagina de incio y flyout-->
+    <FlyoutItem Title="Start Page" FlyoutIcon="Start">
+        <Tab Title="Start Page" Icon="Home">
+            <ShellContent ContentTemplate="{DataTemplate pages:StartPage}"/>
+        </Tab>
+    </FlyoutItem>
+    <!--Paginas de Vocabulary flyout-->
+    <FlyoutItem Title="Vocabulary" FlyoutIcon="Leccion" >
+        <Tab Title="Content" Icon="Contenido" >
+            <ShellContent ContentTemplate="{DataTemplate pagesVoc:Vocabulary1}"/>
+        </Tab>
+        <Tab Title="Exercise 1" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVoc:VocabularyEx1}"/>
+        </Tab>
+        <Tab Title="Exercise 2" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVoc:VocabularyEx2}"/>
+        </Tab>
+        <Tab Title="Exercise 3" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVoc:VocabularyEx3}"/>
+        </Tab>
+        <Tab Title="Exercise 4" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVoc:VocabularyEx4}"/>
+        </Tab>
+    </FlyoutItem>
+    <!--Paginas de verbs flyout-->
+    <ShellContent Title="Regular Verbs" Icon="Leccion" ContentTemplate="{DataTemplate pagesVer:RegularVerbs}"/>
+
+    <ShellContent Title="Irregular Verbs" Icon="Leccion" ContentTemplate="{DataTemplate pagesVer:IrregularVerbs}"/>
+
+    <FlyoutItem Title="Verb Exercises" FlyoutIcon="Leccion" >
+        <Tab Title="Exercise 1" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVer:ExerciseVerbs1}"/>
+        </Tab>
+        <Tab Title="Exercise 2" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVer:ExerciseVerbs2}"/>
+        </Tab>
+        <Tab Title="Exercise 3" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVer:ExerciseVerbs3}"/>
+        </Tab>
+        <Tab Title="Exercise 4" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesVer:ExerciseVerbs4}"/>
+        </Tab>
+    </FlyoutItem>
+    <!--Paginas de Reading flyout-->
+    <FlyoutItem Title="Reading" FlyoutIcon="Leccion" >
+        <Tab Title="Reading 1" Icon="Contenido">
+            <ShellContent ContentTemplate="{DataTemplate pagesRea:Reading1}"/>
+        </Tab>
+        <Tab Title="Exercise 1" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesRea:ReadingEx1}"/>
+        </Tab>
+        <Tab Title="Reading 2" Icon="Contenido">
+            <ShellContent ContentTemplate="{DataTemplate pagesRea:Reading2}"/>
+        </Tab>
+        <Tab Title="Exercise 2" Icon="Exercise">
+            <ShellContent ContentTemplate="{DataTemplate pagesRea:ReadingEx2}"/>
+        </Tab>
+    </FlyoutItem>
+    <!--Color footer -->
+    <Shell.FlyoutFooter>
+        <StackLayout BackgroundColor="#9d1517" Padding="5">
+            <Label Text="Equipo5 &#10; Marco Antonio García Hernández &#10; Alejandro González Zárate &#10; Matías Julian Pérez May" TextColor="white"
+                   FontSize="Micro"
+                   HorizontalTextAlignment="Center"
+                   FontFamily="Rockwell"/>
+            <Label Text="© 2022" FontSize="Small"  TextColor="white"
+                   HorizontalTextAlignment="Center" 
+                   FontFamily="Rockwell"/>
+        </StackLayout>
+    </Shell.FlyoutFooter>
+</Shell>

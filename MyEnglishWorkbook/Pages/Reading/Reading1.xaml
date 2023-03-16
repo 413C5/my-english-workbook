@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Reading.Reading1"
+             Title="Reading 1">
+    <!--Lectura 1
+        Autor: Marco Antonio García Hernández-->
+    <ScrollView>
+        <StackLayout>
+            <!--Se crea un grid para acomodar la imagen y titulo-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Image Aspect="AspectFit" Source="Un"  HorizontalOptions="Start"   HeightRequest="80" Grid.Column="0" />
+                <Label Text="UNITED NATIONS" FontSize="38"
+                       HorizontalOptions="Center"  TextColor="Black"  FontAttributes="Bold" VerticalOptions="Center"  Grid.Column="1"/>
+            </Grid>
+            <!--Se escribe el texto por parrafo-->
+            <Label Text="The United Nations is an international organization founded in 1945 after the Second World War by 51 countries committed to maintaining international peace and security, developing friendly relations among nations and promoting social progress, better living standards and human rights." 
+                   TextColor="Black"  HorizontalTextAlignment="Center" FontSize="20" Padding="10,0,10,10"/>
+
+            <Label Text="Due to its unique international character, and the powers vested in its founding Charter, the Organization can take action on a wide range of issues, and provide a forum for its 193 Member States to express their views, through the General Assembly, the Security Council, the Economic and Social Council and other bodies and committees." 
+                   TextColor="Black"  HorizontalTextAlignment="Center" FontSize="20"  Padding="10,0,10,10" />
+
+            <Label Text="The work of the United Nations reaches every corner of the globe. Although best known for peacekeeping, peacebuilding, conflict prevention and humanitarian assistance, there are many other ways the United Nations and its System (specialized agencies, funds and programmes) affect our lives and make the world a better place. The Organization works on a broad range of fundamental issues, from sustainable development, environment and refugees protection, disaster relief, counter terrorism, disarmament and non-proliferation, to promoting democracy, human rights, gender equality and the advancement of women, governance, economic and social development and international health, clearing landmines, expanding food production, and more, in order to achieve its goals and coordinate efforts for a safer world for this and future generations. " 
+                   TextColor="Black" HorizontalTextAlignment="Center" FontSize="20"  Padding="10,0,10,10" />
+            
+            <Label Text="The UN has 4 main purposes" FontSize="30"
+                        TextColor="Black"  FontAttributes="Bold"  Padding="10,0,10,10"/>
+            <!--Se crea un grid para asi poder escribir en forma de lista-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="*" FontSize="20"
+                            TextColor="Black" Padding="10,0,0,0" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="To keep peace throughout the world." FontSize="20"
+                            TextColor="Black" Padding="0,0,10,10" Grid.Column="1" Grid.Row="0"/>
+                <Label Text="*" FontSize="20"
+                            TextColor="Black" Padding="10,0,0,0" Grid.Column="0" Grid.Row="1"/>
+                <Label Text="To develop friendly relations among nations." FontSize="20"
+                            TextColor="Black" Padding="0,0,10,10" Grid.Column="1" Grid.Row="1"/>
+                <Label Text="*" FontSize="20"
+                            TextColor="Black" Padding="10,0,0,0" Grid.Column="0" Grid.Row="2"/>
+                <Label Text="To help nations work together to improve the lives of poor people, to conquer hunger, disease and illiteracy, and to encourage respect for each other's rights and freedoms." FontSize="20"
+                            TextColor="Black" Padding="0,0,10,10" Grid.Column="1" Grid.Row="2"/>
+                <Label Text="*" FontSize="20"
+                            TextColor="Black" Padding="10,0,0,0" Grid.Column="0" Grid.Row="3"/>
+                <Label Text="To be a centre for harmonizing the actions of nations to achieve these goals." FontSize="20"
+                            TextColor="Black" Padding="0,0,10,100" Grid.Column="1" Grid.Row="3"/>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

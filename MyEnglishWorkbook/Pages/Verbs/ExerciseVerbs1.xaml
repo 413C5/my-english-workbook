@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyEnglishWorkbook.Pages.Verbs.ExerciseVerbs1"
+             Title="Exercise 1">
+    
+    <!--Ejercicio 1 de verbos. Opción múltiple, en donde se tiene que elegir la opcion correcta
+        Autor:Alejandro González Zárate-->
+    
+    <ContentPage.Resources>
+        <!--Diccionario de recursos-->
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="BotonCheck">
+                <Setter Property="FontSize" Value="25"/>
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="BackgroundColor" Value="#e03754"/>
+                <Setter Property="HorizontalOptions" Value="Center"/>
+                <Setter Property="BorderColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+                <Setter Property="BorderWidth" Value="2"/>
+                <Setter Property="TextTransform" Value="None"/>
+            </Style>
+            <Style TargetType="Label" x:Key="Resultado">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontFamily" Value="Rockwell Bold"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout Margin="15">
+            <!--Instrucción-->
+            <Label Text="1-Select the right word." FontFamily="Rockwell Bold" TextColor="Black"/>
+            <ListView x:Name="lsvQuestionsV" HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <!--Se genera una lista-->
+                    <DataTemplate>
+                        <!--Listado de preguntas-->
+                        <ViewCell>
+                            <!--Permite usar DataTemplates personalizados-->
+                            <StackLayout>
+                                <Label Text="{Binding Enunciado}" FontFamily="Rockwell"/>
+                                <StackLayout x:Name="Ans" RadioButtonGroup.GroupName="{Binding Numero}">
+                                    <RadioButton Content="{Binding Res1} "
+                                    Value="{Binding Res1}" CheckedChanged="RadioButton_CheckedChanged" FontFamily="Rockwell" FontSize="Medium"/>
+                                    <RadioButton Content="{Binding Res2}"
+                                    Value="{Binding Res2}" CheckedChanged="RadioButton_CheckedChanged" FontFamily="Rockwell" FontSize="Medium"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <!--Score-->
+            <Frame BackgroundColor="Transparent">
+                <Label Text="" x:Name="lblResultado" Style="{StaticResource Resultado}"/>
+            </Frame>
+            <!--Al darle click da el puntaje-->
+            <Button x:Name="Checker" Clicked="Checker_Clicked" Text="Check" Style="{StaticResource BotonCheck}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
